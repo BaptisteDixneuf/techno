@@ -58,7 +58,7 @@ function processV1Request (request, response) {
 
            // Use the Actions on Google lib to respond to Google requests; for other requests use JSON
           if (requestSource === googleAssistantRequest) {
-            sendGoogleResponse('Il fait ' + results[0].Value); // Send simple response to user
+            sendGoogleResponse('Il fait ' + results[0].Value.split(".")[0] + " degrés, " + results[0].Value.split(".")[1]); // Send simple response to user
           } else {
             sendResponse('Il fait' + results[0].Value); // Send simple response to user
           }
